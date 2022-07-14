@@ -1,0 +1,15 @@
+apiVerion: v1
+kind: Service
+metadata:
+  name: nginx
+  labels: 
+    app: nginx
+spec:
+  type: NodePort
+  ports:
+  - name: nginx
+    nodePort: 32092
+    port: 92
+    targetPort: 9002
+  selector:
+    app: nginx
